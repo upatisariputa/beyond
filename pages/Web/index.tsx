@@ -49,12 +49,15 @@ const Web = () => {
     setNavButtonNumber(index);
   };
 
-  const onLeave = (origin, destination, direction) => {
-    const items = { origin, destination, direction };
-    setChangingItems(items);
-    window.setTimeout(setCurrentPage, 250, destination.index);
-    window.setTimeout(handleNavButtonNumber, 250, destination.index);
-  };
+  const onLeave = useCallback(
+    (origin, destination, direction) => {
+      const items = { origin, destination, direction };
+      setChangingItems(items);
+      window.setTimeout(setCurrentPage, 250, destination.index);
+      window.setTimeout(handleNavButtonNumber, 250, destination.index);
+    },
+    [setCurrentPage, handleNavButtonNumber]
+  );
 
   const mappingSections = arrSections.map((element, index) => (
     <div key={index} className="section">

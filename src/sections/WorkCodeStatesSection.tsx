@@ -27,7 +27,7 @@ const WorkCodeStatesSection = (props: Props) => {
           <LaptopContainer>
             <LaptopWrapper>
               <ReactPlayer
-                url={"https://www.youtube.com/watch?v=nzxEIgLlrlI"}
+                url={"https://youtu.be/ZnRrVUdDrWw?t=867"}
                 width="42vw"
                 height="53vh"
                 muted={true}

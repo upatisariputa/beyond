@@ -29,7 +29,7 @@ const WorkTriPriendsSection = (props: Props) => {
           <PhoneContainer>
             <PhonePlayerWrapper>
               <ReactPlayer
-                url={"https://www.youtube.com/watch?v=nzxEIgLlrlI"}
+                url={"https://youtu.be/tuZN4P_-3tk"}
                 width="330px"
                 height="690px"
                 muted={true}
