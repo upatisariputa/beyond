@@ -1,4 +1,3 @@
-import ReactFullpage from "@fullpage/react-fullpage";
 import Link from "next/link";
 import React from "react";
 import {
@@ -8,6 +7,7 @@ import {
   TopIconImg,
   TopIconWrapper,
   TopLayout,
+  TopLink,
 } from "../../../styles/TopStyles";
 
 type Props = {
@@ -30,7 +30,7 @@ const TopComponent = (props: Props) => {
             onMouseOver={() => handleNavButtonNumber(0)}
             onMouseLeave={() => handleNavButtonNumber(currentPage)}
           >
-            <a href="/#IntroSection">
+            <TopLink href="/#IntroSection">
               <TopButtonImg
                 src={
                   navButtonNumber === 0 || currentPage === 0
@@ -38,13 +38,13 @@ const TopComponent = (props: Props) => {
                     : "/images/about.png"
                 }
               />
-            </a>
+            </TopLink>
           </TopButtonWrapper>
           <TopButtonWrapper
             onMouseOver={() => handleNavButtonNumber(1)}
             onMouseLeave={() => handleNavButtonNumber(currentPage)}
           >
-            <a href="/#WorkTriPriendsSection">
+            <TopLink href="/#WorkTriPriendsSection">
               <TopButtonImg
                 src={
                   navButtonNumber === 1 ||
@@ -57,13 +57,13 @@ const TopComponent = (props: Props) => {
                     : "/images/work.png"
                 }
               />
-            </a>
+            </TopLink>
           </TopButtonWrapper>
           <TopButtonWrapper
             onMouseOver={() => handleNavButtonNumber(4)}
             onMouseLeave={() => handleNavButtonNumber(currentPage)}
           >
-            <a href="/#OutroSection">
+            <TopLink href="/#OutroSection">
               <TopButtonImg
                 src={
                   navButtonNumber === 4 || currentPage === 4
@@ -71,7 +71,7 @@ const TopComponent = (props: Props) => {
                     : "/images/contact.png"
                 }
               />
-            </a>
+            </TopLink>
           </TopButtonWrapper>
         </TopButtonsWrapper>
       </TopLayout>

@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
+
 import {
   IntroSection,
   OutroSection,
@@ -78,6 +79,7 @@ const Web = () => {
         onLeave={(origin, destination, direction) =>
           onLeave(origin, destination, direction)
         }
+        fixedElements="Top"
         render={() => {
           return (
             <>
