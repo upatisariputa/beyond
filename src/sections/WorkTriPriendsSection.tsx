@@ -1,6 +1,10 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import { CommonLayout, CommonLayoutImg } from "../../styles/CommonStyles";
+import {
+  CommonLayout,
+  CommonLayoutBlackBg,
+  CommonLayoutImg,
+} from "../../styles/CommonStyles";
 import {
   PhoneContainer,
   PhoneImg,
@@ -23,7 +27,7 @@ const WorkTriPriendsSection = (props: Props) => {
   return (
     <>
       <CommonLayout>
-        <CommonLayoutImg src="./images/main00.jpg" />
+        <CommonLayoutBlackBg />
         <WorkTriPriendscontentContainer>
           <MainTextComponent title={title} texts={texts} />
           <PhoneContainer>

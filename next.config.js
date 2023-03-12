@@ -18,6 +18,7 @@ module.exports = withBundleAnalyzer({
             svgoConfig: {
               plugins: [
                 {
+                  name: "preset-default",
                   // Enable figma's wrong mask-type attribute work
                   removeRasterImages: false,
                   removeStyleElement: false,

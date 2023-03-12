@@ -5,6 +5,15 @@ export const CommonLayout = styled.div`
   width: 100vw;
 `;
 
+export const CommonLayoutBlackBg = styled.div`
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  background-color: black;
+  z-index: -1;
+`;
+
 export const CommonLayoutImg = styled.img`
   width: 100vw;
   height: 100vh;

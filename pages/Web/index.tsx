@@ -4,12 +4,18 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import {
   IntroSection,
   OutroSection,
-  WorkCodeStatesSection,
-  WorkOnGoingSection,
+  WorkFlybitSVGSection,
+  WorkFlybitModule,
+  WorkFlybitTraidingView,
   WorkTriPriendsSection,
+  WorkFlybitSection,
 } from "../../src/sections";
 import TopComponent from "../../src/components/common/TopComponent";
 import { changingItemsProps } from "../../@types/fullpage";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import { NotionComponent } from "../../src/components/common";
 
 const Web = () => {
@@ -33,22 +39,28 @@ const Web = () => {
 
   const anchors = [
     "IntroSection",
+    "WorkFlybitSection",
+    "WorkFlybitSVGSection",
+    "WorkFlybitModule",
+    "WorkFlybitTraidingView",
     "WorkTriPriendsSection",
-    "WorkCodeStatesSection",
-    "WorkOnGoingSection",
     "OutroSection",
   ];
 
   const arrSections = [
     IntroSection,
+    WorkFlybitSection,
+    WorkFlybitSVGSection,
+    WorkFlybitModule,
+    WorkFlybitTraidingView,
     WorkTriPriendsSection,
-    WorkCodeStatesSection,
-    WorkOnGoingSection,
+    // WorkCodeStatesSection,
+    // WorkOnGoingSection,
   ];
 
-  const handleNavButtonNumber = (index: number) => {
+  const handleNavButtonNumber = useCallback((index: number) => {
     setNavButtonNumber(index);
-  };
+  }, []);
 
   const onLeave = useCallback(
     (origin, destination, direction) => {
@@ -61,7 +73,7 @@ const Web = () => {
   );
 
   const mappingSections = arrSections.map((element, index) => (
-    <div key={index} className="section">
+    <div key={index.toString() + element.name} className="section">
       {React.createElement(element, { changingItems })}
     </div>
   ));
@@ -93,7 +105,7 @@ const Web = () => {
           );
         }}
       ></ReactFullpage>
-      <NotionComponent />
+      {/* <NotionComponent /> */}
     </>
   );
 };
