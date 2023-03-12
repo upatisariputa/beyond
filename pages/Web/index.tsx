@@ -105,7 +105,7 @@ const Web = () => {
           );
         }}
       ></ReactFullpage>
-      {/* <NotionComponent /> */}
+      <NotionComponent />
     </>
   );
 };

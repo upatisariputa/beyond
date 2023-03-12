@@ -1,30 +1,51 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import { CommonLayout, CommonLayoutImg } from "../../styles/CommonStyles";
+import Slick from "react-slick";
+import { CommonLayout, CommonLayoutBlackBg } from "../../styles/CommonStyles";
 import { ImageElement } from "../../styles/elementStyles/ImageElementStyles";
 import {
   WorkFlybitContentContainer,
   WorkFlybitImageWrapper,
+  WorkFlybitSlickSliderWrapper,
 } from "../../styles/WorkFlybitSection";
 
 import { MainTextComponent } from "../components/common";
 
 const WorkFlybitSection = () => {
   const title = "Flybit TradingView Chart";
-  const texts = ["TradingView Chart 마이그레이션", "Chart Socket Server "];
+  const texts = [
+    "TradingView Chart 마이그레이션",
+    "TradingView Chart WebSocket 연결",
+    "Chart Socket Server 유지보수",
+  ];
+  const images = [
+    "/images/flybitChart.png",
+    "/images/flybitChartReset.png",
+    "/images/flybitChartSocket.png",
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  const mappingImages = images.map((image, idx) => (
+    <div key={image + idx.toString()}>
+      <ImageElement src={image} imgHeight="50vh" imgWidth="40vw" />
+    </div>
+  ));
 
   return (
     <>
       <CommonLayout>
-        {/* <CommonLayoutImg src="/images/main01.jpg" /> */}
+        <CommonLayoutBlackBg />
         <WorkFlybitContentContainer>
           <MainTextComponent title={title} texts={texts} />
           <WorkFlybitImageWrapper>
-            <ImageElement
-              src="/images/flybitImg.png"
-              imgHeight="50vh"
-              imgWidth="30vw"
-            />
+            <WorkFlybitSlickSliderWrapper>
+              <Slick {...settings}>{mappingImages}</Slick>
+            </WorkFlybitSlickSliderWrapper>
           </WorkFlybitImageWrapper>
         </WorkFlybitContentContainer>
       </CommonLayout>
